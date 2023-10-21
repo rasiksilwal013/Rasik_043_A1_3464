@@ -26,4 +26,16 @@ public class Triangle {
     public double getPerimeter() {
         return Point.distance(vertex1, vertex2) + Point.distance(vertex2, vertex3) + Point.distance(vertex3, vertex1);
     }
+
+    public double getArea() {
+        double side1 = Point.distance(vertex1, vertex2);
+        double side2 = Point.distance(vertex2, vertex3);
+        double side3 = Point.distance(vertex3, vertex1);
+
+        double s = (side1 + side2 + side3) / 2;
+        double area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        return area;
+    }
+
+
 }
